@@ -1,0 +1,13 @@
+#!/bin/bash
+U=https://home.iwcc.edu/jbernard
+G=https://shares.iwcc.edu/cs/
+echo "Mount G or U drive?"
+read drive
+if [ $drive = "U" ]
+then 
+	sudo mount.davfs $U ~/Uiwcc -o rw,uid=jared
+	echo "The U: drive is mounted in Uiwcc."
+else
+	sudo mount.davfs $G ~/Gcs -o rw,uid=jared
+	echo "The G: drive is mounted in Gcs."
+fi
